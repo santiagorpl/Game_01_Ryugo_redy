@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bbhnke8ncn8g0"]
+
+[ext_resource type="Texture2D" uid="uid://iet0v558ftx6" path="res://asset/papan.png" id="1_7fuso"]
+[ext_resource type="Script" uid="uid://5rjqn1bg2iua" path="res://papan.gd" id="1_68ojc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25h05"]
+bg_color = Color(0.03529412, 0.09803922, 0.047058824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0dig"]
+bg_color = Color(0.18275306, 0.7065206, 0.424893, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="PapanUI" type="CanvasLayer" unique_id=720587645]
+script = ExtResource("1_68ojc")
+
+[node name="papan" type="Panel" parent="." unique_id=1002758566]
+offset_top = -3.0
+offset_right = 1144.0
+offset_bottom = 652.0
+
+[node name="Papan" type="Sprite2D" parent="." unique_id=1236119019]
+position = Vector2(559, 301.00003)
+scale = Vector2(0.9279476, 0.90220386)
+texture = ExtResource("1_7fuso")
+
+[node name="Panel" type="Panel" parent="Papan" unique_id=627785614]
+offset_left = -103.454124
+offset_top = 110.83966
+offset_right = 99.14356
+offset_bottom = 131.83966
+theme_override_styles/panel = SubResource("StyleBoxFlat_25h05")
+
+[node name="Button" type="Button" parent="." unique_id=2063176242]
+offset_left = 476.0
+offset_top = 386.0
+offset_right = 688.0
+offset_bottom = 417.0
+theme_override_colors/font_color = Color(0.9166397, 0.91664, 0.9166397, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0dig")
+text = "TEKAN MASUK -LANJUTKAN"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

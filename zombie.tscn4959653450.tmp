@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bt8opvkuqkxug"]
+
+[ext_resource type="Script" uid="uid://40hjwxu45jyn" path="res://zombie.gd" id="1_uiaus"]
+[ext_resource type="Texture2D" uid="uid://cxoswtk25wxop" path="res://karakter/atas_zombe.png" id="2_roy8y"]
+
+[node name="zombie" type="CharacterBody2D" unique_id=160170848]
+script = ExtResource("1_uiaus")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1634130478]
+texture = ExtResource("2_roy8y")

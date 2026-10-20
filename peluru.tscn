@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dn8f6nasy25pd"]
+
+[ext_resource type="Texture2D" uid="uid://bs2aihfrhd6pk" path="res://asset/peluru-removebg-preview (1).png" id="1_gp46o"]
+
+[sub_resource type="GDScript" id="GDScript_gp46o"]
+script/source = "extends Area2D
+
+@export var speed: float = 900.0
+var direction: Vector2 = Vector2.RIGHT
+
+func _physic_process(delta):
+	position += direction * speed * delta
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3kq1s"]
+radius = 10.049875
+
+[node name="peluru" type="Area2D" unique_id=668357345]
+script = SubResource("GDScript_gp46o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2119752207]
+position = Vector2(-9.536743e-07, 0)
+rotation = -3.1415927
+scale = Vector2(0.09238784, 0.09480189)
+texture = ExtResource("1_gp46o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=821333486]
+shape = SubResource("CircleShape2D_3kq1s")

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://paprqcijw4sm"]
+
+[ext_resource type="Texture2D" uid="uid://l0p0nny2t3vr" path="res://bacground.jpg" id="1_mae5d"]
+[ext_resource type="Texture2D" uid="uid://bkvnfq3ei7amy" path="res://karakter/kiri.png" id="2_mae5d"]
+[ext_resource type="Texture2D" uid="uid://druod16sg01h6" path="res://karakter/kiri_zombe.png" id="2_ouk20"]
+[ext_resource type="Script" uid="uid://i0dxcl1hqtks" path="res://button.gd" id="4_4hy44"]
+[ext_resource type="PackedScene" uid="uid://bved2awp4jscd" path="res://music.tscn" id="5_ytr4m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7opl3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_56qte"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25h05"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 4
+
+[node name="Node2D" type="Node2D" unique_id=1384202685]
+scale = Vector2(1, 1.0043293)
+
+[node name="Panel" type="Panel" parent="." unique_id=1869913461]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7opl3")
+
+[node name="Bacground" type="Sprite2D" parent="." unique_id=874473832]
+position = Vector2(579, 324)
+scale = Vector2(1.1308594, 1.1293706)
+texture = ExtResource("1_mae5d")
+
+[node name="KiriZombe" type="Sprite2D" parent="." unique_id=1121702578]
+position = Vector2(973.0001, 502)
+rotation = 0.47558367
+scale = Vector2(0.50709504, 0.5260021)
+texture = ExtResource("2_mae5d")
+
+[node name="KiriZombe2" type="Sprite2D" parent="." unique_id=862361561]
+position = Vector2(109, 529)
+scale = Vector2(0.20226735, 0.17235291)
+texture = ExtResource("2_ouk20")
+
+[node name="Kiri" type="Sprite2D" parent="KiriZombe2" unique_id=1120915003]
+position = Vector2(1043.1738, -2390.4443)
+rotation = -2.4824452
+scale = Vector2(2.162979, 2.3852868)
+texture = ExtResource("2_mae5d")
+
+[node name="KiriZombe3" type="Sprite2D" parent="KiriZombe2" unique_id=134305994]
+position = Vector2(4622.595, -2355.6318)
+scale = Vector2(1.4836658, 1.1681837)
+texture = ExtResource("2_ouk20")
+
+[node name="Button" type="Button" parent="." unique_id=1893640748]
+material = SubResource("CanvasItemMaterial_56qte")
+offset_left = 471.0
+offset_top = 271.0
+offset_right = 673.0
+offset_bottom = 349.0
+scale = Vector2(1.0075337, 0.9947536)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_25h05")
+text = "Mulai Game"
+script = ExtResource("4_4hy44")
+
+[node name="Node2D" parent="." unique_id=209206929 instance=ExtResource("5_ytr4m")]
+position = Vector2(-3, 10.952576)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://chdstegf1354m"]
+
+[ext_resource type="AudioStream" uid="uid://dpscqr3mpgfg2" path="res://lagu/🎵_[Soundtrack_04]_—_Lukya_Forge_Free_Game_Music.wav" id="1_554nd"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=414558661]
+stream = ExtResource("1_554nd")
+autoplay = true

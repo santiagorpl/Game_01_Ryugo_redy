@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cx7ktouqy36t0"]
+
+[ext_resource type="Texture2D" uid="uid://l0p0nny2t3vr" path="res://bacground.jpg" id="1_uj18x"]
+[ext_resource type="Script" uid="uid://t32jjmu46hud" path="res://end_gam.gd" id="1_uj711"]
+[ext_resource type="Texture2D" uid="uid://c1rmvx2t2u53a" path="res://asset/asset_Santiago/AND.png" id="2_uj711"]
+[ext_resource type="PackedScene" uid="uid://bved2awp4jscd" path="res://music.tscn" id="4_lqamw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jm1ur"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ii8jt"]
+
+[node name="Node2D" type="TileMapLayer" unique_id=801706339]
+script = ExtResource("1_uj711")
+
+[node name="Bacground" type="Sprite2D" parent="." unique_id=1646531624]
+position = Vector2(582, 323)
+scale = Vector2(1.1445313, 1.1258742)
+texture = ExtResource("1_uj18x")
+
+[node name="And" type="Sprite2D" parent="." unique_id=571207722]
+position = Vector2(580, 296)
+scale = Vector2(1.1168225, 1.2239132)
+texture = ExtResource("2_uj711")
+
+[node name="Button" type="Button" parent="." unique_id=758810577]
+offset_left = 442.0
+offset_top = 436.0
+offset_right = 696.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jm1ur")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_ii8jt")
+text = "KEMBALI
+"
+
+[node name="Node2D" parent="." unique_id=209206929 instance=ExtResource("4_lqamw")]
+position = Vector2(4, 118)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bved2awp4jscd"]
+
+[ext_resource type="AudioStream" uid="uid://b8mxi0y82f8l4" path="res://lagu/lagu.wav" id="1_3h6ak"]
+
+[node name="Node2D" type="Node2D" unique_id=209206929]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=844014256]
+stream = ExtResource("1_3h6ak")
+autoplay = true

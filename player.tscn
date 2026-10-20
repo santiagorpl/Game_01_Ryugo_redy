@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://xow2qwogeod1"]
+
+[ext_resource type="Script" uid="uid://d1i134ccy0wtc" path="res://player.gd" id="1_sweqy"]
+[ext_resource type="PackedScene" uid="uid://dbcv26tmpjtkf" path="res://pelu.tscn" id="2_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://bxefipjekqwya" path="res://karakter/atas.png" id="2_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://d2kq0etl115bb" path="res://karakter/bawah.png" id="3_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://db0airjxu2m5h" path="res://karakter/kanan.png" id="4_dw050"]
+[ext_resource type="Texture2D" uid="uid://bkvnfq3ei7amy" path="res://karakter/kiri.png" id="5_b26j0"]
+[ext_resource type="AudioStream" uid="uid://bn25puvair4on" path="res://lagu/TEMBAK.wav" id="7_1jxqw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
+atlas = ExtResource("2_2hs0m")
+region = Rect2(0, 0, 274, 372)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
+atlas = ExtResource("3_1jxqw")
+region = Rect2(0, 0, 270, 368)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivps1"]
+atlas = ExtResource("4_dw050")
+region = Rect2(0, 0, 368, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urp6f"]
+atlas = ExtResource("5_b26j0")
+region = Rect2(0, 0, 368, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0dig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ghd")
+}],
+"loop": 1,
+"name": &"atas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvl01")
+}],
+"loop": 1,
+"name": &"bawah",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivps1")
+}],
+"loop": 1,
+"name": &"kanan",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urp6f")
+}],
+"loop": 1,
+"name": &"kiri",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0dig"]
+radius = 106.531685
+
+[node name="player" type="CharacterBody2D" unique_id=416658692 groups=["player"]]
+script = ExtResource("1_sweqy")
+bullet_scene = ExtResource("2_1jxqw")
+
+[node name="ShootPoint" type="Marker2D" parent="." unique_id=232560566]
+position = Vector2(-15, -38.999996)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1327696581]
+position = Vector2(-20.999994, -2.3841858e-07)
+scale = Vector2(0.70108694, 0.8074074)
+sprite_frames = SubResource("SpriteFrames_m0dig")
+animation = &"bawah"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=460524840]
+position = Vector2(-22, -41)
+shape = SubResource("CircleShape2D_m0dig")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=265792304]
+zoom = Vector2(0.1, 0.1)
+
+[node name="ShootAudio" type="AudioStreamPlayer" parent="Camera2D" unique_id=1822794721]
+stream = ExtResource("7_1jxqw")
+autoplay = true
